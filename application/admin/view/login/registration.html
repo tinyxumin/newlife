@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>注册页</title>
+
+    {css href="/static/admin/css/style.css"}
+    {css href="/static/admin/css/style-responsive.css"}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    {js href="/static/admin/js/html5shiv.js"}
+    {js href="/static/admin/js/respond.min.js"}
+    <![endif]-->
+</head>
+
+<body class="login-body">
+
+<div class="container">
+
+    <form class="form-signin" action="{:url('admin/login/save')}" method="post">
+        <div class="form-signin-heading text-center">
+            <h1 class="sign-title">用户注册</h1>
+            <img src="/static/admin/images/login-logo.png" alt=""/>
+        </div>
+
+
+        <div class="login-wrap">
+            <p>输入您的个人信息</p>
+            <input type="text" autofocus="" placeholder="姓 名" class="form-control" name="userName">
+            <input type="text" autofocus="" placeholder="手机号码" class="form-control" name="phone">
+            <input type="password" autofocus="" placeholder="密 码" class="form-control" name="pas">
+            <input type="password" autofocus="" placeholder="确认密码" class="form-control" name="repas">
+            <div class="radios">
+                <label for="radio-01" class="label_radio col-lg-6 col-sm-6">
+                    <input type="radio" checked="" value="1" id="radio-01" name="sex"> 男
+                </label>
+                <label for="radio-02" class="label_radio col-lg-6 col-sm-6">
+                    <input type="radio" value="2" id="radio-02" name="sex"> 女
+                </label>
+            </div>
+
+            <label class="checkbox">
+                <input type="checkbox" value="1" name="agree"> 我同意徐家政策
+            </label>
+            <button type="submit" class="btn btn-lg btn-login btn-block">
+                <i class="fa fa-check"></i>
+            </button>
+
+            <div class="registration">
+                已经注册
+                <a href="{:url('admin/login/index')}" class="">
+                    去登陆
+                </a>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+{js href="/static/admin/js/jquery-1.10.2.min.js"}
+{js href="/static/admin/js/bootstrap.min.js"}
+{js href="/static/admin/js/modernizr.min.js"}
+
+</body>
+</html>

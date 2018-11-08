@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>在线聊天室</title>
+
+    {css href="/static/admin/css/style.css"}
+    {css href="/static/admin/css/style-responsive.css"}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    {js href="/static/admin/js/html5shiv.js"}
+    {js href="/static/admin/js/respond.min.js"}
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="/static/admin/images/logo.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="/static/admin/images/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="/static/admin/images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="{:url('admin/index/index')}"><i class="fa fa-home"></i> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>家庭</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="{:url('admin/family/index')}"> 家庭成员</a></li>
+                        <li><a href="{:url('admin/family/photos')}">家庭照片</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>生活</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="{:url('admin/daily/index')}"> 生活记录</a></li>
+                        <li><a href="{:url('admin/daily/userRecord')}"> 我的记录</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="{:url('admin/chat/index')}">
+                        <i class="fa fa-comments"></i>
+                        <span>在线聊天室</span>
+                    </a>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="index.html" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">8</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">You have 8 pending task</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Database update</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">40%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Dashboard done</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                                                <span class="">90%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Web Development</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                                                <span class="">66% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Mobile App</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33" role="progressbar" class="progress-bar progress-bar-danger">
+                                                <span class="">33% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>Issues fixed</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                                                <span class="">80% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">See All Pending Task</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="{$userInfo['image']}" alt="" width="28" height="28"/>
+                            {$userInfo['userName']}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-user"></i>  个人信息</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i>  设置</a></li>
+                            <li><a href="{:url('admin/login/lock')}"><i class="fa fa-unlock-alt"></i> &nbsp;锁屏</a></li>
+                            <li><a href="{:url('admin/login/index')}"><i class="fa fa-sign-out"></i> 退出登陆</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                在线聊天室
+            </h3>
+            <ul class="breadcrumb">
+                <li class="active"> 聊天室 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="panel">
+                        <header class="panel-heading">
+                            Chat
+                        </header>
+                        <div class="panel-body">
+                            <ul class="chats cool-chat">
+                                <li class="in">
+                                    <img src="/static/admin/images/photos/user1.png" alt="" class="avatar">
+                                    <div class="message">
+                                        <span class="arrow"></span>
+                                        <a class="name" href="#">Jone Doe</a>
+                                        <span class="datetime">at Mar 12, 2014 6:12</span>
+                                        <span class="body" id="content">
+
+                                        </span>
+                                    </div>
+                                </li>
+                                <!--
+                                <li class="out">
+                                    <img src="/static/admin/images/photos/user2.png" alt="" class="avatar">
+                                    <div class="message">
+                                        <span class="arrow"></span>
+                                        <a class="name" href="#">Margarita Rose</a>
+                                        <span class="datetime">at Mar 12, 2014 6:13</span>
+                                        <span class="body">
+                                            sed diam nonummy nibh euismod tincidunt ut
+                                        </span>
+                                    </div>
+                                </li>
+                                -->
+                            </ul>
+                            <div class="chat-form ">
+                                <form role="form" class="form-inline">
+                                    <div class="form-group">
+                                        <input type="text" style="width: 100%" placeholder="Type a message here..." id="message" class="form-control">
+                                    </div>
+                                    <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer class="">
+            徐敏的生活站
+        </footer>
+        <!--footer section end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+{js href="/static/admin/js/jquery-1.10.2.min.js"}
+{js href="/static/admin/js/jquery-ui-1.9.2.custom.min.js"}
+{js href="/static/admin/js/jquery-migrate-1.2.1.min.js"}
+{js href="/static/admin/js/bootstrap.min.js"}
+{js href="/static/admin/js/modernizr.min.js"}
+{js href="/static/admin/js/jquery.nicescroll.js"}
+
+<!--common scripts for all pages-->
+{js href="/static/admin/js/scripts.js"}
+
+<script>
+    if(window.WebSocket){
+        var webSocket = new WebSocket('ws://127.0.0.1:9502');
+        webSocket.onopen = function (event){
+            // console.log('hello!');
+            // content.innerHTML = content.innerHTML.concat('<p style="margin-left:120px;height:20px;line-height:20px;">👏欢迎上线</p>');
+        };
+
+        webSocket.onmessage = function(event){
+            var content = document.getElementById('content');
+            if(event.data instanceof Blob){
+                var img = document.createElement('img');
+                img.src = window.URL.createObjectURL(event.data);
+                content.appendChild(img);
+            }else{
+                content.innerHTML = content.innerHTML.concat('<p style="margin-left:20px;height:20px;line-height:20px;">id-'+event.data+'</p>');
+            }
+        };
+
+        var sendMessage = function(){
+            var data = document.getElementById('message').value;
+            webSocket.send(data);
+            document.getElementById('message').value = '';
+        };
+
+    }else{
+        console.log('你的浏览器不支持 websocket !');
+
+    }
+</script>
+
+</body>
+</html>

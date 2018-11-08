@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>家庭成员</title>
+
+  <!--data table-->
+    {css href="/static/admin/js/data-tables/DT_bootstrap.css"}
+
+    {css href="/static/admin/css/style.css"}
+    {css href="/static/admin/css/style-responsive.css"}
+    {css href="/static/admin/css/toastr.min.css"}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  {js href="/static/admin/js/html5shiv.js"}
+  {js href="/static/admin/js/respond.min.js"}
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="/static/admin/images/logo.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="/static/admin/images/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="/static/admin/images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="{:url('admin/index/index')}"><i class="fa fa-home"></i> <span>主页</span></a></li>
+                <li class="menu-list nav-active"><a href=""><i class="fa fa-laptop"></i> <span>家庭</span></a>
+                    <ul class="sub-menu-list">
+                        <li class="active"><a href="{:url('admin/family/index')}"> 家庭成员</a></li>
+                        <li><a href="{:url('admin/family/photos')}">家庭照片</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>生活</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="{:url('admin/daily/index')}"> 生活记录</a></li>
+                        <li><a href="{:url('admin/daily/userRecord')}"> 我的记录</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{:url('admin/chat/index')}">
+                        <i class="fa fa-comments"></i>
+                        <span>在线聊天室</span>
+                    </a>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+        <!--toggle button start-->
+        <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+        <!--toggle button end-->
+
+        <!--search start-->
+        <form class="searchform" action="index.html" method="post">
+            <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+        </form>
+        <!--search end-->
+
+        <!--notification menu start -->
+        <div class="menu-right">
+            <ul class="notification-menu">
+                <li>
+                    <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                        <i class="fa fa-tasks"></i>
+                        <span class="badge">8</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-head pull-right">
+                        <h5 class="title">You have 8 pending task</h5>
+                        <ul class="dropdown-list user-list">
+                            <li class="new">
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div>Database update</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                            <span class="">40%</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="new">
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div>Dashboard done</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                                            <span class="">90%</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div>Web Development</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                                            <span class="">66% </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div>Mobile App</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="33" role="progressbar" class="progress-bar progress-bar-danger">
+                                            <span class="">33% </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div>Issues fixed</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                                            <span class="">80% </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="new"><a href="">See All Pending Task</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge">5</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-head pull-right">
+                        <h5 class="title">You have 5 Mails </h5>
+                        <ul class="dropdown-list normal-list">
+                            <li class="new">
+                                <a href="">
+                                    <span class="thumb"><img src="/static/admin/images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="thumb"><img src="/static/admin/images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jonathan Smith</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="thumb"><img src="/static/admin/images/photos/user3.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jane Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="thumb"><img src="/static/admin/images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Mark Henry</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="thumb"><img src="/static/admin/images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jim Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                </a>
+                            </li>
+                            <li class="new"><a href="">Read All Mails</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="badge">4</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-head pull-right">
+                        <h5 class="title">Notifications</h5>
+                        <ul class="dropdown-list normal-list">
+                            <li class="new">
+                                <a href="">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    <span class="name">Server #1 overloaded.  </span>
+                                    <em class="small">34 mins</em>
+                                </a>
+                            </li>
+                            <li class="new">
+                                <a href="">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    <span class="name">Server #3 overloaded.  </span>
+                                    <em class="small">1 hrs</em>
+                                </a>
+                            </li>
+                            <li class="new">
+                                <a href="">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    <span class="name">Server #5 overloaded.  </span>
+                                    <em class="small">4 hrs</em>
+                                </a>
+                            </li>
+                            <li class="new">
+                                <a href="">
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                    <span class="name">Server #31 overloaded.  </span>
+                                    <em class="small">4 hrs</em>
+                                </a>
+                            </li>
+                            <li class="new"><a href="">See All Notifications</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <img src="{$userInfo['image']}" alt="" width="28" height="28"/>
+                        {$userName}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                        <li><a href="#"><i class="fa fa-user"></i>  个人信息</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i>  设置</a></li>
+                        <li><a href="{:url('admin/login/lock')}"><i class="fa fa-unlock-alt"></i> &nbsp;锁屏</a></li>
+                        <li><a href="{:url('admin/login/index')}"><i class="fa fa-sign-out"></i> 退出登陆</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                家庭成员
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">家庭</a>
+                </li>
+                <li class="active"> 家庭成员 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <header class="panel-heading">
+                    家庭成员
+                    <span class="tools pull-right">
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    <div class="btn-group">
+                        <a href="{:url('admin/family/add')}"><button class="btn btn-primary">
+                            添 加 <i class="fa fa-plus"></i>
+                        </button></a>
+                    </div>
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="#">Print</a></li>
+                            <li><a href="#">Save as PDF</a></li>
+                            <li><a href="#">Export to Excel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                <tr>
+                    <th style="text-align: center">姓 名</th>
+                    <th style="text-align: center">性 别</th>
+                    <th style="text-align: center">年 龄</th>
+                    <th style="text-align: center">手机号码</th>
+                    <th style="text-align: center">出生日期</th>
+                    <th style="text-align: center">地 址</th>
+                    <th style="text-align: center">编 辑</th>
+                    <th style="text-align: center">删 除</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="data" id="v"}
+                <tr class="" align="center">
+                    <td>{$v['userName']}</td>
+                    <td>{if condition="$v['sex']==1"}男{elseif condition="$v['sex']==2"}女{else} {/if}</td>
+                    <td class="center">{$v['age']}</td>
+                    <td class="center">{$v['phone']}</td>
+                    <td class="center">{$v['birthday']}</td>
+                    <td class="center">{$v['address']}</td>
+                    <td><a href="{:url('admin/family/edit',['id'=>$v['userId']])}"><button class="btn-info" type="button">编辑</button></a></td>
+                    <td><button class="btn-danger del-btn" data-id="{$v['userId']}" type="button">&nbsp;删除&nbsp;</button>&nbsp;</td>
+                    <!--<td><button class="btn-danger" type="button">删除</button></td>-->
+                </tr>
+                {/volist}
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </section>
+                </div>
+                </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            徐敏的生活站
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+{js href="/static/admin/js/jquery-1.10.2.min.js"}
+{js href="/static/admin/js/jquery-ui-1.9.2.custom.min.js"}
+{js href="/static/admin/js/jquery-migrate-1.2.1.min.js"}
+{js href="/static/admin/js/bootstrap.min.js"}
+{js href="/static/admin/js/modernizr.min.js"}
+{js href="/static/admin/js/jquery.nicescroll.js"}
+{js href="/static/admin/js/toastr.min.js"}
+
+<!--data table-->
+{js href="/static/admin/js/data-tables/jquery.dataTables.js"}
+{js href="/static/admin/js/data-tables/DT_bootstrap.js"}
+
+<!--common scripts for all pages-->
+{js href="/static/admin/js/scripts.js"}
+
+<!--script for editable table-->
+{js href="/static/admin/js/editable-table.js"}
+
+<script>
+    $(function() {
+
+        // 设置弹框参数
+        toastr.options = {
+            closeButton: true,// 是否显示关闭按钮
+            progressBar: true,// 实现显示计时条
+            timeOut: "3000",  // 自动关闭时间
+            positionClass: "toast-top-right" // 提示位置
+            // toast-top-full-width 顶端，宽度铺满整个屏幕
+            // toast-top-right  顶端右边
+            // toast-bottom-left
+        };
+
+        //删除
+        $('.del-btn').click(function () {
+            var ac_id = $(this).attr('data-id');
+            // console.log('删除操作,ID:', ac_id);
+            if (confirm('你确定要[删除]吗?!')) {
+                var obj = $(this).parents('tr');
+                delAjax(ac_id, obj); // 执行AJAX删除
+            }
+        });
+        // 执行AJAX删除
+        function delAjax(id, obj) {
+            // console.log(obj);
+            $.ajax({
+                type: 'delete',
+                url: '/familys/' + id,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status) {
+                        toastr.success(data.info);
+                        // 将该条目删除掉
+                        obj.remove();
+                    } else {
+                        toastr.error(data.info, 'FBI WARING:');
+                    }
+                },
+                error: function () {
+                    alert('AJAX操作失败');
+                }
+            });
+        }
+
+
+    });
+
+</script>
+
+<!-- END JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        EditableTable.init();
+    });
+</script>
+
+</body>
+</html>
