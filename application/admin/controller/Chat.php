@@ -7,16 +7,17 @@
     class Chat extends Controller
     {
         private $user;
+        private $userInfo;
 
-        public function _initialize()
+        public function initialize()
         {
-            parent::_initialize();
+            parent::initialize();
             $sessionId = session('token');
             $cookieId  = session('token');
             if(empty($sessionId) || $sessionId != $cookieId){
                 $this->redirect('admin/login/index');die;
             }
-            $this->userInfo = $this->user->userLogin(['userId'=>cookie('userId')]);
+            $this->userInfo = model('user')->userLogin(['userId'=>cookie('userId')]);
         }
 
         public function index()

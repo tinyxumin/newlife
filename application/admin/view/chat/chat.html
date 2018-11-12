@@ -176,6 +176,103 @@
                         </div>
                     </li>
                     <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">You have 5 Mails </h5>
+                            <ul class="dropdown-list normal-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="thumb"><img src="/static/admin/images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="/static/admin/images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jonathan Smith</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="/static/admin/images/photos/user3.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jane Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="/static/admin/images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Mark Henry</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="/static/admin/images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">Jim Doe</span>
+                                          <span class="msg">Lorem ipsum dolor sit amet...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">Read All Mails</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">Notifications</h5>
+                            <ul class="dropdown-list normal-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #1 overloaded.  </span>
+                                        <em class="small">34 mins</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #3 overloaded.  </span>
+                                        <em class="small">1 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #5 overloaded.  </span>
+                                        <em class="small">4 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">Server #31 overloaded.  </span>
+                                        <em class="small">4 hrs</em>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">See All Notifications</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <img src="{$userInfo['image']}" alt="" width="28" height="28"/>
                             {$userInfo['userName']}
@@ -220,9 +317,9 @@
                                 <li class="in">
                                     <img src="/static/admin/images/photos/user1.png" alt="" class="avatar">
                                     <div class="message">
-                                        <span class="arrow"></span>
-                                        <a class="name" href="#">Jone Doe</a>
-                                        <span class="datetime">at Mar 12, 2014 6:12</span>
+                                        <!--<span class="arrow"></span>-->
+                                        <!--<a class="name" href="#">Jone Doe</a>-->
+                                        <!--<span class="datetime">at Mar 12, 2014 6:12</span>-->
                                         <span class="body" id="content">
 
                                         </span>
@@ -243,12 +340,10 @@
                                 -->
                             </ul>
                             <div class="chat-form ">
-                                <form role="form" class="form-inline">
                                     <div class="form-group">
-                                        <input type="text" style="width: 100%" placeholder="Type a message here..." id="message" class="form-control">
+                                        <input type="text" style="width: 100%" placeholder="Type a message here..." id="message" uid="{$userInfo['userId']}" uname="{$userInfo['userName']}" class="form-control">
                                     </div>
                                     <button class="btn btn-primary" onclick="sendMessage()">Send</button>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -265,21 +360,9 @@
     </div>
     <!-- main content end-->
 </section>
-
-<!-- Placed js at the end of the document so the pages load faster -->
-{js href="/static/admin/js/jquery-1.10.2.min.js"}
-{js href="/static/admin/js/jquery-ui-1.9.2.custom.min.js"}
-{js href="/static/admin/js/jquery-migrate-1.2.1.min.js"}
-{js href="/static/admin/js/bootstrap.min.js"}
-{js href="/static/admin/js/modernizr.min.js"}
-{js href="/static/admin/js/jquery.nicescroll.js"}
-
-<!--common scripts for all pages-->
-{js href="/static/admin/js/scripts.js"}
-
 <script>
     if(window.WebSocket){
-        var webSocket = new WebSocket('ws://127.0.0.1:9502');
+        var webSocket = new WebSocket('ws://127.0.0.1:9508');
         webSocket.onopen = function (event){
             // console.log('hello!');
             // content.innerHTML = content.innerHTML.concat('<p style="margin-left:120px;height:20px;line-height:20px;">👏欢迎上线</p>');
@@ -292,13 +375,18 @@
                 img.src = window.URL.createObjectURL(event.data);
                 content.appendChild(img);
             }else{
-                content.innerHTML = content.innerHTML.concat('<p style="margin-left:20px;height:20px;line-height:20px;">id-'+event.data+'</p>');
+                content.innerHTML = content.innerHTML.concat('<p style="margin-left:20px;height:20px;line-height:20px;">'+event.data+'</p>');
             }
         };
 
         var sendMessage = function(){
             var data = document.getElementById('message').value;
-            webSocket.send(data);
+            if (!data){
+                return true;
+            }
+            var userName = document.getElementById('message').getAttribute('uname');
+            var userId = document.getElementById('message').getAttribute('uid');
+            webSocket.send(data+'--'+userName+'--'+userId);
             document.getElementById('message').value = '';
         };
 
@@ -307,6 +395,16 @@
 
     }
 </script>
+<!-- Placed js at the end of the document so the pages load faster -->
+{js href="/static/admin/js/jquery-1.10.2.min.js"}
+{js href="/static/admin/js/jquery-ui-1.9.2.custom.min.js"}
+{js href="/static/admin/js/jquery-migrate-1.2.1.min.js"}
+{js href="/static/admin/js/bootstrap.min.js"}
+{js href="/static/admin/js/modernizr.min.js"}
+{js href="/static/admin/js/jquery.nicescroll.js"}
+
+<!--common scripts for all pages-->
+{js href="/static/admin/js/scripts.js"}
 
 </body>
 </html>
