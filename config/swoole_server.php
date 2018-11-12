@@ -42,7 +42,10 @@ return [
         }
         if($res){
             foreach($res as $v){
-                $server->push($request->fd,$v['userName'].': '.$v['text']);
+                $server->push($request->fd,'<img src="'.$v['image'].'" class="avatar">
+                                        <a class="name" href="#">'.$v['userName'].'</a>
+                                        <span class="datetime" style="margin-left:20px">'.$v['create_time'].'</span>
+                                        <p style="font-size: 14px;">'.$v['text'].'</p>');
             }
         }
         echo "server: handshake success with fd{$request->fd}\n";
@@ -63,11 +66,16 @@ return [
             'userId'      => $text[2],
             'userName'    => $text[1],
             'text'        => $text[0],
+            'image'       => $text[3],
             'create_time' => date('Y-m-d H:i:s')
         ];
+        $time = date('Y-m-d H:i:s');
         db('chat_room')->insert($sqlData);
         foreach ($fds as $fd){
-            $server->push($fd,$text[1].':'. $text[0]);
+            $server->push($fd,'<img src="'.$text[3].'" class="avatar">
+                                        <a class="name" href="#">'.$text[1].'</a>
+                                        <span class="datetime" style="margin-left:20px">'.$time.'</span>
+                                        <p style="font-size: 14px;">'.$text[0].'</p>');
             // $ws->push($fd,file_get_contents('http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg'),WEBSOCKET_OPCODE_BINARY);
         }
         echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";

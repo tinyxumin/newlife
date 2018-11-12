@@ -315,12 +315,8 @@
                         <div class="panel-body">
                             <ul class="chats cool-chat">
                                 <li class="in">
-                                    <img src="/static/admin/images/photos/user1.png" alt="" class="avatar">
-                                    <div class="message">
-                                        <!--<span class="arrow"></span>-->
-                                        <!--<a class="name" href="#">Jone Doe</a>-->
-                                        <!--<span class="datetime">at Mar 12, 2014 6:12</span>-->
-                                        <span class="body" id="content">
+                                    <div class="message" style="margin-left: 0px;">
+                                        <span class="body" id="content" style="margin-top: 5px;">
 
                                         </span>
                                     </div>
@@ -341,7 +337,7 @@
                             </ul>
                             <div class="chat-form ">
                                     <div class="form-group">
-                                        <input type="text" style="width: 100%" placeholder="Type a message here..." id="message" uid="{$userInfo['userId']}" uname="{$userInfo['userName']}" class="form-control">
+                                        <input type="text" style="width: 100%" placeholder="Type a message here..." id="message" uid="{$userInfo['userId']}" image="{$userInfo['image']}" uname="{$userInfo['userName']}" class="form-control">
                                     </div>
                                     <button class="btn btn-primary" onclick="sendMessage()">Send</button>
                             </div>
@@ -386,7 +382,8 @@
             }
             var userName = document.getElementById('message').getAttribute('uname');
             var userId = document.getElementById('message').getAttribute('uid');
-            webSocket.send(data+'--'+userName+'--'+userId);
+            var image = document.getElementById('message').getAttribute('image');
+            webSocket.send(data+'--'+userName+'--'+userId+'--'+image);
             document.getElementById('message').value = '';
         };
 
