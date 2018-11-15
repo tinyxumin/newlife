@@ -7,7 +7,7 @@ use think\Model;
 class Diary extends Model
 {
     // 设置当前模型对应的完整数据表名称
-    protected $table = 'xm_Diary';
+    protected $table = 'xm_diary';
 
     //自定义初始化
     protected function initialize()
